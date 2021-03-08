@@ -13,7 +13,20 @@ class Stack {
     }
 
     pop() {
-
+        if(!this.top) return -1
+        if(this.length === 1) {
+            let top = this.top
+            this.top = null
+            this.bottom = null
+            this.length = 0
+            return top
+        }
+        else {
+            let top = this.top
+            this.top = this.top.next
+            this.length--
+            return top
+        }
     }
 
     push(data) {
@@ -32,7 +45,8 @@ class Stack {
     }
 
     peek() {
-
+        if(this.top) return this.top
+        else return null
     }
 }
 
@@ -41,4 +55,10 @@ stack.push(1)
 stack.push(2)
 stack.push(3)
 
+stack.pop()
+stack.peek()
+
+
+
+console.log(stack.peek())
 console.log(stack)
