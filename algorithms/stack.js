@@ -5,6 +5,7 @@ class Node {
     }
 }
 
+//Stack is a FILO data structure
 class Stack {
     constructor() {
         this.top = null
