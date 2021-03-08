@@ -16,11 +16,29 @@ class Stack {
 
     }
 
-    push() {
-        
+    push(data) {
+        const node = new Node(data)
+
+        if(this.top === null) {
+            this.top = node
+            this.bottom = node
+        }
+        else {
+            let tempTop = this.top
+            this.top = node
+            this.top.next = tempTop
+        }
+        this.length++
     }
 
     peek() {
 
     }
 }
+
+const stack = new Stack()
+stack.push(1)
+stack.push(2)
+stack.push(3)
+
+console.log(stack)
